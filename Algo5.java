@@ -8,11 +8,13 @@ public class Algo5 {
         String text;
         char [] arr={};
 
-        boolean isTrue = false;
+        boolean isTrue;
         
         do{
             System.out.print("Enter a text : ");
             text = scan.nextLine();
+            isTrue = false;
+
             if(text.isEmpty()){
                 System.out.println("Enter Valid Input");
                 isTrue=true;

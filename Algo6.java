@@ -8,12 +8,13 @@ public class Algo6 {
         String str;
         String [] arr;
 
-        boolean isTrue=false;
+        boolean isTrue;
 
         do{
 
             System.out.print("Enter a Sentence : ");
             str = scan.nextLine();
+            isTrue=false;
 
             if (str.isEmpty()){
                 System.out.println("Invalid Input");

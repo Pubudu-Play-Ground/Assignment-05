@@ -6,6 +6,7 @@ public class Algo8 {
         int[] numB = {7, 8, -8, 2, 1, -9, 6};
 
         int [] intersect = new int[0];
+        int [] all = new int [0];
         loop:
         for (int i = 0; i < numA.length; i++) {
             for (int j = 0; j < numB.length; j++) {
@@ -28,5 +29,37 @@ public class Algo8 {
             }
         }
         System.out.println("Intersect array : "+Arrays.toString(intersect));
+
+        loopall:
+        for (int i = 0; i < numA.length+numB.length; i++) {
+            if(i<numA.length){
+                for (int j = 0; j < all.length; j++) {
+                    if (numA[i]==all[j]){
+                        continue loopall;
+                    }
+                }
+                int [] temp = new int[all.length+1];
+                for (int k = 0; k < all.length; k++) {
+                    temp[k]=all[k];
+                }
+                temp[temp.length-1]=numA[i];
+                all=temp;
+            } else{
+                for (int j = 0; j < all.length; j++) {
+                    if (numB[i-numA.length]==all[j]){
+                        continue loopall;
+                    }
+                }
+                int [] temp = new int[all.length+1];
+                for (int k = 0; k < all.length; k++) {
+                    temp[k]=all[k];
+                }
+                temp[temp.length-1]=numB[i-numA.length];
+                all=temp;
+            }
+        }
+        System.out.println("All array : "+Arrays.toString(all));
+
+        
     }
 }
