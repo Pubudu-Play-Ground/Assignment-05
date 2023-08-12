@@ -8,6 +8,8 @@ public class Algo6 {
         String str;
         String [] arr;
 
+        boolean isTrue=false;
+
         do{
 
             System.out.print("Enter a Sentence : ");
@@ -15,6 +17,7 @@ public class Algo6 {
 
             if (str.isEmpty()){
                 System.out.println("Invalid Input");
+                isTrue=true;
                 continue;
             }
 
@@ -22,11 +25,12 @@ public class Algo6 {
             for (int i = 0; i < charLetters.length; i++) {
                 if(charLetters[i]<0| charLetters[i]>127){
                     System.out.println("Invalid ASCII leteer");
+                    isTrue=true;
                     break;
                 }
             }
 
-        } while(str.isEmpty());
+        } while(isTrue);
 
         arr = str.split(" ");
         String [] temp = new String[arr.length];
