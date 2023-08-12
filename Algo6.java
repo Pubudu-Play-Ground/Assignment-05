@@ -15,6 +15,15 @@ public class Algo6 {
 
             if (str.isEmpty()){
                 System.out.println("Invalid Input");
+                continue;
+            }
+
+            char [] charLetters = str.toCharArray();
+            for (int i = 0; i < charLetters.length; i++) {
+                if(charLetters[i]<0| charLetters[i]>127){
+                    System.out.println("Invalid ASCII leteer");
+                    break;
+                }
             }
 
         } while(str.isEmpty());

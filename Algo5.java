@@ -17,9 +17,17 @@ public class Algo5 {
             }
 
             arr = text.toCharArray();
+
+            
             char [] temp = new char[arr.length];
             for (int i = 0; i < arr.length; i++) {
+
+                if(arr[i]<0 | arr[i]>127){
+                    System.out.println("Invalid ASCII letter");
+                    break;
+                }
                 temp[i]=arr[arr.length-1-i];
+
             }
             arr=temp;
 
