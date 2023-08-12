@@ -4,7 +4,7 @@ public class Algo1{
     private static final Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
         int num;
-        int [] arr= new int[0];
+        
         do{
 
             System.out.print("Enter a Number : ");
