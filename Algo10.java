@@ -14,35 +14,59 @@ public class Algo10 {
 
           
             if (number.startsWith("0")){
-                if(number.length()==10){
-                    
-                    char[] arr = number.toCharArray();
-                    for (int i = 0; i < arr.length; i++) {
-                        if(Character.isDigit(arr[i])){
-                            continue;
-                        }else{
-                            System.out.println("Enter correct phone number");
-                            isTrue=true;
-                            break;
-                        }
-                    }
+                if(number.length()==11){
 
+                    if(number.charAt(3)=='-'){
+                        char[] arr = number.toCharArray();
+                        for (int i = 0; i < arr.length; i++) {
+                            if(i==3){
+                                continue;
+                            }else{
+
+                                if(Character.isDigit(arr[i])){
+                                    continue;
+                                }else{
+                                    System.out.println("Enter correct phone number");
+                                    isTrue=true;
+                                    break;
+                                }
+                            }
+                        }
+                    } else{
+                        System.out.println("Enter correct phone number in correct Order");
+                        isTrue=true;
+                        break;
+                    }
+                    
                 } else{
                     System.out.println("Enter correct phone number");
                     isTrue=true;
                 }
             } else if (number.startsWith("+94")){
-                if(number.length()==12){
-                    
-                    char[] arr = number.toCharArray();
-                    for (int i = 1; i < arr.length; i++) {
-                        if(Character.isDigit(arr[i])){
-                            continue;
-                        }else{
-                            System.out.println("Enter correct phone number");
-                            isTrue=true;
-                            break;
+                if(number.length()==15){
+                    if(number.charAt(3)==' '&&number.charAt(6)==' '&&number.charAt(10)==' '){
+
+                        char[] arr = number.toCharArray();
+                        for (int i = 1; i < arr.length; i++) {
+                            if(i==3||i==6||i==10){
+                                continue;
+                            } else{
+                                if(Character.isDigit(arr[i])){
+                                    continue;
+                                }else{
+                                    System.out.println("Enter correct phone number");
+                                    isTrue=true;
+                                    break;
+                                }
+                            }
+
+
+                            
                         }
+                    } else{
+                        System.out.println("Enter correct phone number in correct Order");
+                        isTrue=true;
+                        break;
                     }
 
                 } else{

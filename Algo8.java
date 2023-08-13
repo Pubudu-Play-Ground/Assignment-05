@@ -6,7 +6,7 @@ public class Algo8 {
         int[] numB = {7, 8, -8, 2, 1, -9, 6};
 
         int [] intersect = new int[0];
-        int [] all = new int [0];
+        
         loop:
         for (int i = 0; i < numA.length; i++) {
             for (int j = 0; j < numB.length; j++) {
@@ -30,6 +30,7 @@ public class Algo8 {
         }
         System.out.println("Intersect array : "+Arrays.toString(intersect));
 
+        int [] all = new int [0];
         loopall:
         for (int i = 0; i < numA.length+numB.length; i++) {
             if(i<numA.length){
@@ -59,37 +60,43 @@ public class Algo8 {
             }
         }
         System.out.println("Union array : "+Arrays.toString(all));
+    
 
-
-        
-
-        if (numA.length == numB.length) {
-            int[] result = new int[numA.length];
-
-            for (int i = 0; i < numA.length; i++) {
-                result[i] = numA[i] / numB[i];
+        int [] onlyA = new int[0];
+        loopA:
+        for (int i = 0; i < numA.length; i++) {
+            for (int j = 0; j < numB.length; j++) {
+                if(numA[i]==numB[j]){
+                    continue loopA;
+                }
             }
-
-            System.out.println("numA/numB : "+Arrays.toString(result));
-        } else {
-            System.out.println("Arrays have different lengths, cannot perform division.");
-        }
-
-       
-
-        if (numA.length == numB.length) {
-            int[] result = new int[numA.length];
-
-            for (int i = 0; i < numA.length; i++) {
-                result[i] = numB[i] / numA[i];
+            int [] temp=new int[onlyA.length+1];
+            for (int j = 0; j < onlyA.length; j++) {
+                temp[j]=onlyA[j];
             }
+            temp[temp.length-1]=numA[i];
+            onlyA=temp;
+        } 
+        System.out.println("Elements only belongs to numA : "+Arrays.toString(onlyA));
 
-            System.out.println("numB/numA : "+Arrays.toString(result));
-        } else {
-            System.out.println("Arrays have different lengths, cannot perform division.");
-        }
+        int [] onlyB = new int[0];
+        loopB:
+        for (int i = 0; i < numB.length; i++) {
+            for (int j = 0; j < numA.length; j++) {
+                if(numB[i]==numA[j]){
+                    continue loopB;
+                }
+            }
+            int [] temp=new int[onlyB.length+1];
+            for (int j = 0; j < onlyB.length; j++) {
+                temp[j]=onlyB[j];
+            }
+            temp[temp.length-1]=numB[i];
+            onlyB=temp;
+        } 
+        System.out.println("Elements only belongs to numB : "+Arrays.toString(onlyB));
 
-        
+    
 
         int [] diff = new int[0];
         loopdiff:
