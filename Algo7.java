@@ -31,7 +31,7 @@ public class Algo7 {
             }
         }
 
-        System.out.println("Maximum length word : "+max);
-        System.out.println("Minimum length word : "+min);
+        System.out.println("Maximum length word : "+max+"\nLength : "+max.length());
+        System.out.println("Minimum length word : "+min+"\nLength : "+min.length());
     }
 }
